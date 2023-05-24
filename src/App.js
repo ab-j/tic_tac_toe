@@ -3,6 +3,9 @@ import './App.css';
 import Board from "./components/Board"
 import ScoreBoard from './components/ScoreBoard';
 import Reset from './components/Reset';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Winner from './components/Winner';
 function App() {
 
   const Win_conditions=[
@@ -67,9 +70,12 @@ function App() {
 
   return (
     <div className="App">
+    <Header />
     <ScoreBoard scores={scores} xPlaying={xPlaying}/>
     <Board board={board} onClick={ gameOver ? resetBoard: handleBoxClicked} />
       <Reset resetBoard={resetBoard} />
+      {/* <Winner oScore={scores.oScore} xScore={scores.xScore} /> */}
+      <Footer />
     </div>
   );
 }
